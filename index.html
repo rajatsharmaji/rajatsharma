@@ -65,7 +65,7 @@
                 My skillset includes Java and MySql expertise and I am also familiar with HTML, CSS and Figma. In my spare time, I love nothing more than playing Chess and listening to Music.
              </p>
            <div data-aos="fade-up" data-aos-delay="600">
-            <a href="./assets/cv/Rajat Sharma CV.pdf" Class="btn btn-brand me-3">Resume</a>
+            <a href="./assets/cv/Rajat Sharma CV.pdf" Class="btn btn-brand me-3g">Resume</a>
             <a href="#footer" class="link-custom"> Contact me </a>
            </div>
         </div>
@@ -236,7 +236,7 @@
         <h1>Let's talk</h1>
       </div>
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-        <form class="row g-lg-3 gy-3">
+        <form name="contact-us" class="row g-lg-3 gy-3">
           <div class="form-group col-md-6">
             <input type="text" name="name" class="form-control" placeholder="Enter your name">
           </div>
@@ -283,5 +283,19 @@
 
 </div>  
     <!--//CONTENT WRAPPER-->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzATjFw9PdDn67lH9mZyrIUCJ9HybP79BsoLoKrjJWHsN43_bYtK1l2Kxl0_pxYrXUS/exec'
+      const form = document.forms['contact-us']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            form.reset()
+            alert("success!")
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
 </body>
 </html>
