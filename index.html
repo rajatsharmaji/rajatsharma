@@ -1,301 +1,549 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajat Sharma</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/aos.css">
-    <link rel="stylesheet" href="./assets/css/line-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body data-bs-spy="scroll" data-bs-target="navbar">
-
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/main.js"></script>
-      
-    <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container flex-lg-column">
-          <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
-            <span class="h3 fw-bold d-block d-lg-none">Rajat Sharma</span>
-            <img src="./assets/images/Rajat Sharma.jpg" class="d-none d-lg-block rounded-circle">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajat Sharma - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base styles now default to dark mode */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #111827;
+        color: #d1d5db;
+      }
+      .nav-link {
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: #fbbf24;
+      }
+      .tab-btn.active {
+        border-bottom-color: #fbbf24;
+        color: #fbbf24;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 400px;
+      }
+      @media (min-width: 768px) {
+        .chart-container {
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <header
+      class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-sm shadow-gray-800"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-white">Rajat Sharma</div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="nav-link font-medium text-gray-300">Home</a>
+          <a href="#experience" class="nav-link font-medium text-gray-300"
+            >Experience</a
+          >
+          <a href="#skills" class="nav-link font-medium text-gray-300"
+            >Skills</a
+          >
+          <a href="#education" class="nav-link font-medium text-gray-300"
+            >Education</a
+          >
+          <a
+            href="#contact"
+            class="nav-link font-medium bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 !text-white"
+            >Contact</a
+          >
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-gray-300 focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#education">education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#contact">contact</a>
-              </li>
-              
-            </ul>
-          </div>
         </div>
       </nav>
- 
-    <!--/NavBar-->
-
-    <!--CONTENT WRAPPER-->
-<div id="content-wrapper">
-
-<!--HOME-->
-<section id="home" class="full-height px-lg-5">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-             <h1 class="display-4 fw-bold" data-aos="fade-up">
-                I'M INTO
-                 <span class="text-brand"></span>
-             </h1>
-             <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                Hi there! I'm Rajat Sharma and currently pursuing MCA from Bharati Vidyapeeth's Institute of Computer Applications and Management (BVICAM).
-                My technical skills are Java, MySql, Data Structures and Algorithms, OOPs, DBMS and I am also familiar with JavaScript and ReactJS. In my spare time, I love nothing more than playing Chess and Solving Leetcode Problems.
-             </p>
-           <div data-aos="fade-up" data-aos-delay="600">
-            <a href="./assets/cv/RajatResume.pdf" Class="btn btn-brand me-3g">Resume</a>
-            <a href="#footer" class="link-custom"> Contact me </a>
-           </div>
-        </div>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  var typed = new Typed(".text-brand", {
-    strings: ["JAVA","MySql","DSA","JavaScript"],
-    typeSpeed: 150,
-    backSpeed: 150,
-    loop: true
-
-  })
-</script>
-</section>
-<!--//HOME-->
-
-<!--Skills-->
-<section id="skills" class="full-height" px-lg-5>
-  <div class="container">
-    <div class="row pb-4">
-      <div class="col-lg-8" data-aos="fade-up">
-        <h1 class="text-brand">Skills & Abilities</h1>
-        <p>“The future belongs to those who learn more skills and combine them in creative ways.” <br> ~Robert Greene</p>
-      <p class="mt-0"></p>
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+        <a
+          href="#home"
+          class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800"
+          >Home</a
+        >
+        <a
+          href="#experience"
+          class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800"
+          >Experience</a
+        >
+        <a
+          href="#skills"
+          class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800"
+          >Skills</a
+        >
+        <a
+          href="#education"
+          class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800"
+          >Education</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800"
+          >Contact</a
+        >
       </div>
-    </div>
-    <div class="row" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-md-4 mt-2 mb-4">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="lab la-java"></i>
-           </div>
-           <h4 class="mt-4 mb-2">JAVA</h4>
-           <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="container mx-auto px-6 py-20 md:py-32 text-center"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">
+          Rajat Sharma
+        </h1>
+        <p class="text-xl md:text-2xl text-amber-500 font-medium mb-8">
+          Software Developer | AI & Full-Stack Specialist
+        </p>
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-gray-400 leading-relaxed">
+            Innovative Software Developer with expertise in building full-stack
+            applications and AI-driven solutions. Proven ability to architect
+            and deploy scalable systems using React, Node.js, Python, and
+            Generative AI to solve complex problems and deliver significant
+            business impact. Passionate about creating efficient, user-centric
+            products and enhancing workflows through automation.
+          </p>
+        </div>
+      </section>
+
+      <section id="experience" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12 text-white">
+            Professional Journey
+          </h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center border-b-2 border-gray-700 mb-8">
+              <button
+                data-tab="work"
+                class="tab-btn text-lg font-medium py-2 px-6 text-gray-400 border-b-4 border-transparent active"
+              >
+                Work Experience
+              </button>
+              <button
+                data-tab="projects"
+                class="tab-btn text-lg font-medium py-2 px-6 text-gray-400 border-b-4 border-transparent"
+              >
+                Projects
+              </button>
+            </div>
+
+            <div id="work-content" class="tab-content">
+              <div class="mb-12">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="text-xl font-bold text-white">
+                    Software Developer
+                  </h3>
+                  <p class="text-sm text-gray-400">Jan 2024 – Present</p>
+                </div>
+                <p class="text-md text-amber-500 mb-4">
+                  LCNC Technologies Private Limited | New Delhi, India
+                </p>
+                <ul class="list-disc list-inside space-y-3 text-gray-400">
+                  <li>
+                    Architected a medical record management platform integrating
+                    GoHighLevel CRM with
+                    <strong>AI-powered document processing</strong>, achieving
+                    an 80% reduction in manual processing time.
+                  </li>
+                  <li>
+                    Developed an
+                    <strong
+                      >automated nexus letter generation system using OpenAI and
+                      Langchain</strong
+                    >
+                    to streamline workflows for healthcare professionals.
+                  </li>
+                  <li>
+                    Built an
+                    <strong>AI voice agent with contextual memory</strong> for
+                    patient consultations, enhancing interaction quality.
+                  </li>
+                  <li>
+                    Built core features for the DrapCode no-code platform,
+                    including a seamless onboarding system, RBAC, and a
+                    <strong>plugin ecosystem (DocuSign, ImaginePay)</strong>.
+                  </li>
+                  <li>
+                    Enhanced platform performance by resolving critical bugs,
+                    optimizing the Project Import/Export system, and
+                    contributing to the <strong>DrapCode Developer SDK</strong>.
+                  </li>
+                  <li>
+                    Collaborated in an <strong>Agile environment</strong>, using
+                    <strong>Git</strong> and <strong>CI/CD</strong> to deliver
+                    high-quality solutions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="projects-content" class="tab-content hidden">
+              <div class="mb-12">
+                <a
+                  href="https://voxing.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block hover:text-amber-500 transition-colors"
+                >
+                  <h3
+                    class="text-xl font-bold text-white inline-flex items-center"
+                  >
+                    Voxing.ai – AI-Powered Workflow Automation Platform
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 ml-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                      />
+                      <path
+                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                      />
+                    </svg>
+                  </h3>
+                </a>
+                <ul class="list-disc list-inside space-y-3 mt-4 text-gray-400">
+                  <li>
+                    Architected a secure backend using an
+                    <strong>MCP server to support pluggable AI agents</strong>
+                    for workflow automation.
+                  </li>
+                  <li>
+                    Built
+                    <strong>intelligent voice and chat interfaces</strong> using
+                    OpenAI, Gemini, and Deepgram APIs to control tools like
+                    Asana and GitHub.
+                  </li>
+                  <li>
+                    Created a
+                    <strong>Chrome extension and embeddable widget</strong> with
+                    secure client-server messaging for cross-platform control.
+                  </li>
+                  <li>
+                    Designed an
+                    <strong>extensible tool-agent framework</strong> enabling
+                    users to automate task management via natural language.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <a
+                  href="https://drapcode.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block hover:text-amber-500 transition-colors"
+                >
+                  <h3
+                    class="text-xl font-bold text-white inline-flex items-center"
+                  >
+                    DrapCode – No-Code Platform
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 ml-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                      />
+                      <path
+                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                      />
+                    </svg>
+                  </h3>
+                </a>
+                <ul class="list-disc list-inside space-y-3 mt-4 text-gray-400">
+                  <li>
+                    Developed comprehensive
+                    <strong
+                      >onboarding, role-based access, and plugin
+                      integrations</strong
+                    >.
+                  </li>
+                  <li>
+                    Added a <strong>Project Import/Export</strong> feature
+                    enabling seamless migration and backups.
+                  </li>
+                  <li>
+                    Integrated
+                    <strong
+                      >prompt-based AI tools to generate data collections
+                      automatically</strong
+                    >.
+                  </li>
+                  <li>
+                    Contributed to the
+                    <strong
+                      >Drapcode SDK for third-party developer
+                      integrations</strong
+                    >.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-      </div>
-      <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="las la-database"></i>
-           </div>
-           <h4 class="mt-4 mb-2">MySql</h4>
-           <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
         </div>
-      </div>
-      <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="las la-code"></i>
-           </div>
-           <h4 class="mt-4 mb-2">Data Structures</h4>
-           <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
-        </div>
-      </div>
-      <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="las la-object-group"></i>
-           </div>
-           <h4 class="mt-4 mb-2">OOPs</h4>
-           <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
-        </div>
-      </div>
-      <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="lab la-js-square"></i>
-           </div>
-           <h4 class="mt-4 mb-2">JavaScript</h4>
-           <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
-        </div>
-      </div>
-      <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="600">
-        <div class="skills p-4 bg-base rounded-4 shadow-effect">
-           <div class="iconbox rounded-4">
-            <i class="lab la-react"></i>
-           </div>
-           <h4 class="mt-4 mb-2">ReactJS</h4>
-           <p>&#9733 &#9733 &#9733 &#9734 &#9734</p>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-<!--/Skills-->
+      </section>
 
-<!--Education-->
-
-<section id="education" class="full-height px-lg-5">
-<div class="container">
-  <div class="row pb-4">
-    <div class="col-lg-8" data-aos="fade-up">
-      <h1 class="text-brand">My EDUCATION</h6>
-        <p>"The purpose of education is to make good human beings with skill and expertise... Enlightened human beings can be created by teachers."
-          <br> ~A. P. J. Abdul Kalam</p>
-    </div>
-  </div>
-  <div class="row gy-4">
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-      <div class="card-custom rounded-4 bg-base shadow-effect">
-        <div class="card-custom-image rounded-4">
-          <img class="rounded-4" src="./assets/images/BVICAM.jpg" alt="BVICAM">
-        </div>
-        <div class="card-custom-content p-4">
-          <h4>Master Of Computer Application</h4>
-          <p>Bharati Vidyapeeth's Institute of Computer Applications and Management (BVICAM)</p>
-          <p>2022-24</p>
-          <a href="http://bvicam.in/" class="link-custom">Read More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-      <div class="card-custom rounded-4 bg-base shadow-effect">
-        <div class="card-custom-image rounded-4">
-          <img class="rounded-4" src="./assets/images/ZHDC.jpg" alt="ZHDC">
-        </div>
-        <div class="card-custom-content p-4">
-          <h4>B.Sc in Physical Sciences</h4>
-          <p>Zakir Husain Delhi College,<br> University Of Delhi</p>
-          <p>2017-20</p>
-          <a href="http://www.zakirhusaindelhicollege.ac.in/" class="link-custom">Read More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-      <div class="card-custom rounded-4 bg-base shadow-effect">
-        <div class="card-custom-image rounded-4">
-          <img class="rounded-4" src="./assets/images/SKAJIC.jpg" alt="SKAJIC">
-        </div>
-        <div class="card-custom-content p-4">
-          <h4>Secondary School | Science</h4>
-          <p>Shivkumar Agarwal Janta Inter College</p>
-          <p>2016-17</p>
-          <a href="http://skajic.com/" class="link-custom">Read More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-      <div class="card-custom rounded-4 bg-base shadow-effect">
-        <div class="card-custom-image rounded-4">
-          <img class="rounded-4" src="./assets/images/PSSVMIC.jpg" alt="PSSVMIC">
-        </div>
-        <div class="card-custom-content p-4">
-          <h4>High School | Science</h4>
-          <p>P.S Saraswati Vidya Mandir Inter College</p>
-          <p >2014-15</p>
-          <a href="https://www.pssvmic.in/" class="link-custom">Read More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!--/Education-->
-
-<!--Contact-->
-
-<section id="contact" class="full-height px-lg-5">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-8 pb-4" data-aos="fade-up">
-        <h6 class="text-brand">CONTACT</h6>
-        <h1>Let's talk</h1>
-      </div>
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-        <form name="contact-us" class="row g-lg-3 gy-3">
-          <div class="form-group col-md-6">
-            <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+      <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4 text-white">
+            Technical Skills
+          </h2>
+          <p class="text-center text-gray-400 max-w-2xl mx-auto mb-12">
+            A visual representation of my core competencies. My skills span
+            across frontend and backend development, with a strong focus on
+            building modern, AI-integrated applications.
+          </p>
+          <div class="chart-container">
+            <canvas id="skillsChart"></canvas>
           </div>
-          <div class="form-group col-md-6">
-            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group col-md-12">
-            <input type="text" name="subject" class="form-control" placeholder="Enter subject" required>
-          </div>
-          <div class="form-group col-md-12">
-            <textarea name="message" rows="4" class="form-control" placeholder="Enter Your message" required></textarea>
-          </div>
-          <div class="form-group col-md-12 d-grid">
-            <button type="submit" class="btn btn-brand">Contact me</button>
-          </div>
-          </form>
-          
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--/Contact-->
-
-<!--Footer-->
-<footer id="footer" class="py-5 px-lg-5">
-<div class="container">
-  <div class="row gy-4 justify-content-between">
-    <div class="col-auto">
-      <p class="mb-0">Made with ❤️ by Rajat Sharma</p>
-    </div>
-    <div class="col-auto">
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/rajat-sharma-7598591a0"><i class="lab la-linkedin"></i></a>
-          <a href="https://www.instagram.com/rajatsharmajii/"><i class="lab la-instagram"></i></a>
-          <a href="https://github.com/rajatsharmaji"><i class="lab la-github"></i></a>
         </div>
-      </p>
-    </div>
-  </div>
-</div>
-</footer>
-<!--/Footer-->
+      </section>
 
-</div>  
-    <!--//CONTENT WRAPPER-->
+      <section id="education" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-8 text-white">Education</h2>
+          <div class="max-w-2xl mx-auto">
+            <h3 class="text-xl font-bold text-white">
+              Master of Computer Applications (MCA)
+            </h3>
+            <p class="text-md text-amber-500 my-2">
+              Bharati Vidyapeeth's Institute of Computer Applications and
+              Management (BVICAM)
+            </p>
+            <p class="text-gray-400 mb-2">2022 – 2024</p>
+            <p class="text-gray-200 font-medium">CGPA: 9.0 / 10.0</p>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
+          <p class="max-w-xl mx-auto mb-8 text-gray-400">
+            I'm currently seeking new opportunities. Feel free to reach out for
+            collaborations or just a friendly chat.
+          </p>
+          <div
+            class="flex justify-center items-center space-x-6 text-lg text-gray-300"
+          >
+            <a
+              href="mailto:rajat.sharma.swe@gmail.com"
+              class="hover:text-amber-500 transition-colors"
+              >rajat.sharma.swe@gmail.com</a
+            >
+            <span>&bull;</span>
+            <a
+              href="https://linkedin.com/in/rajat-sharma-swe"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amber-500 transition-colors"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzATjFw9PdDn67lH9mZyrIUCJ9HybP79BsoLoKrjJWHsN43_bYtK1l2Kxl0_pxYrXUS/exec'
-      const form = document.forms['contact-us']
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            form.reset()
-            alert("success!")
-          })
-          .catch(error => console.error('Error!', error.message))
-      })
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Mobile Menu Handler ---
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Close mobile menu on nav link click
+        document
+          .querySelectorAll("#mobile-menu a")
+          .forEach((link) =>
+            link.addEventListener("click", () =>
+              mobileMenu.classList.add("hidden")
+            )
+          );
+
+        // --- Tabbed Content Handler for Experience Section ---
+        const tabs = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((item) => item.classList.remove("active"));
+            tab.classList.add("active");
+            const target = tab.getAttribute("data-tab");
+            tabContents.forEach((content) => {
+              content.id === `${target}-content`
+                ? content.classList.remove("hidden")
+                : content.classList.add("hidden");
+            });
+          });
+        });
+
+        // --- Skills Chart Logic ---
+        let skillsChart;
+        const skillsData = {
+          labels: [
+            "Frontend",
+            "Backend",
+            "AI & Machine Learning",
+            "Databases & Data Engineering",
+            "Cloud & DevOps",
+          ],
+          datasets: [
+            {
+              label: "Skill Proficiency",
+              data: [85, 90, 95, 80, 75],
+              backgroundColor: [
+                "rgba(251, 191, 36, 0.3)", // Amber
+                "rgba(59, 130, 246, 0.3)", // Blue
+                "rgba(239, 68, 68, 0.3)", // Red
+                "rgba(16, 185, 129, 0.3)", // Green
+                "rgba(139, 92, 246, 0.3)", // Violet
+              ],
+              borderColor: [
+                "rgba(251, 191, 36, 1)",
+                "rgba(59, 130, 246, 1)",
+                "rgba(239, 68, 68, 1)",
+                "rgba(16, 185, 129, 1)",
+                "rgba(139, 92, 246, 1)",
+              ],
+              borderWidth: 1.5,
+            },
+          ],
+        };
+
+        const chartOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              pointLabels: {
+                display: true,
+                centerPointLabels: true,
+                font: { size: 14, family: "Inter" },
+                color: "#d1d5db",
+              },
+              grid: { color: "rgba(255, 255, 255, 0.1)" },
+              ticks: { display: false, backdropColor: "transparent" },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false, // Hiding legend as labels are clear
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const technologies = {
+                    Frontend: "React, Next.js, Redux, Tailwind",
+                    Backend: "Node.js, Express.js, Microservices",
+                    "AI & Machine Learning":
+                      "Generative AI, LLMs, Langchain, RAG",
+                    "Databases & Data Engineering":
+                      "MySQL, MongoDB, Redis, PySpark",
+                    "Cloud & DevOps": "AWS, Docker, Kubernetes, CI/CD",
+                  };
+                  return technologies[context.label] || "Key Skills";
+                },
+              },
+            },
+          },
+        };
+
+        function renderChart() {
+          if (skillsChart) {
+            skillsChart.destroy();
+          }
+          const skillsChartCtx = document
+            .getElementById("skillsChart")
+            .getContext("2d");
+          skillsChart = new Chart(skillsChartCtx, {
+            type: "polarArea",
+            data: skillsData,
+            options: chartOptions,
+          });
+        }
+
+        // --- Intersection Observer for Active Nav Link (Scroll Spy) ---
+        const sections = document.querySelectorAll("main section");
+        const navLinks = document.querySelectorAll(
+          ".nav-link:not(.bg-amber-500)"
+        );
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach((link) => {
+                  link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === `#${id}`
+                  );
+                });
+              }
+            });
+          },
+          { rootMargin: "-50% 0px -50% 0px" } // Highlights the link when section is in the middle of the viewport
+        );
+        sections.forEach((section) => sectionObserver.observe(section));
+
+        // --- Intersection Observer for Chart Animation ---
+        const chartElement = document.getElementById("skillsChart");
+        const chartObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              // Re-render the chart every time it intersects with the viewport
+              if (entry.isIntersecting) {
+                renderChart();
+              }
+            });
+          },
+          { threshold: 0.5 } // Trigger when 50% of the chart is visible
+        );
+
+        if (chartElement) {
+          chartObserver.observe(chartElement);
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
