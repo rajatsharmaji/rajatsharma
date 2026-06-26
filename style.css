@@ -157,3 +157,11 @@ body {
   border-bottom-color: var(--primary);
   text-shadow: 0 0 8px var(--primary-glow);
 }
+
+/* Avatar Image styling */
+#avatarImg {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.arise-mode #avatarImg {
+  filter: hue-rotate(270deg) saturate(1.3) contrast(1.1);
+}

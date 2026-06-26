@@ -1,770 +1,914 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rajat Sharma | S-Rank Hunter Profile & Portfolio</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Orbitron for titles/UI, Rajdhani for tech stats, Outfit for readable text -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              sysDark: '#04060f',
-              sysPanel: 'rgba(10, 15, 30, 0.75)',
-            },
-            fontFamily: {
-              orbitron: ['Orbitron', 'sans-serif'],
-              rajdhani: ['Rajdhani', 'sans-serif'],
-              outfit: ['Outfit', 'sans-serif'],
-            }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajat Sharma | S-Rank Developer Profile & Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Orbitron for titles/UI, Rajdhani for tech stats, Outfit for readable text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sysDark: '#04060f',
+            sysPanel: 'rgba(10, 15, 30, 0.75)',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
           }
         }
       }
-    </script>
+    }
+  </script>
 
-    <!-- Custom System Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="antialiased min-h-screen relative">
-    
-    <!-- Canvas for background matrix/particle animations -->
-    <canvas id="particleCanvas" class="fixed inset-0 w-full h-full -z-10"></canvas>
-    
-    <!-- Scanlines for monitors visual -->
-    <div class="scanlines"></div>
+  <!-- Custom System Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Floating System Notifications Box -->
-    <div id="notificationContainer" class="fixed top-4 right-4 z-50 flex flex-col items-end max-w-sm w-full pointer-events-none"></div>
+<body class="antialiased min-h-screen relative">
 
-    <!-- INITIAL SYSTEM WELCOME MODAL -->
-    <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
-      <div class="w-full max-w-lg bg-[#070b18] border-2 border-cyan-500/40 p-8 rounded-lg shadow-[0_0_40px_rgba(0,240,255,0.25)] text-center relative overflow-hidden font-tech">
-        <div class="absolute top-0 left-0 w-full h-1 bg-cyan-400"></div>
-        <h2 class="text-3xl font-bold font-mono-sys text-cyan-400 mb-6 tracking-widest uppercase">
-          [ SYSTEM ALERT ]
-        </h2>
-        <div class="space-y-4 text-left font-sans text-gray-300 border-y border-cyan-500/10 py-6 my-6 leading-relaxed">
-          <p class="font-mono-sys text-xs text-cyan-400/80 mb-2 uppercase tracking-widest">&#187; Hunter Invitation</p>
-          <p class="text-lg">
-            A new player has requested access to the personal logs of <strong class="text-white">Rajat Sharma</strong>.
-          </p>
-          <div class="mt-4 bg-cyan-950/20 border border-cyan-500/10 p-4 rounded text-sm space-y-2">
-            <div><strong class="text-gray-400">CLASS:</strong> <span class="text-cyan-400 font-semibold font-mono-sys">AI & Full-Stack Specialist</span></div>
-            <div><strong class="text-gray-400">RANK:</strong> <span class="text-yellow-400 font-bold font-mono-sys">S-CLASS HUNTER</span></div>
-            <div><strong class="text-gray-400">FATIGUE:</strong> <span class="text-green-400 font-mono-sys">0 / 100</span></div>
+  <!-- Canvas for background matrix/particle animations -->
+  <canvas id="particleCanvas" class="fixed inset-0 w-full h-full -z-10"></canvas>
+
+  <!-- Scanlines for monitors visual -->
+  <div class="scanlines"></div>
+
+  <!-- Floating System Notifications Box -->
+  <div id="notificationContainer"
+    class="fixed top-4 right-4 z-50 flex flex-col items-end max-w-sm w-full pointer-events-none"></div>
+
+  <!-- INITIAL SYSTEM WELCOME MODAL -->
+  <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+    <div
+      class="w-full max-w-lg bg-[#070b18] border-2 border-cyan-500/40 p-8 rounded-lg shadow-[0_0_40px_rgba(0,240,255,0.25)] text-center relative overflow-hidden font-tech">
+      <div class="absolute top-0 left-0 w-full h-1 bg-cyan-400"></div>
+      <h2 class="text-3xl font-bold font-mono-sys text-cyan-400 mb-6 tracking-widest uppercase">
+        [ SYSTEM ALERT ]
+      </h2>
+      <div class="space-y-4 text-left font-sans text-gray-300 border-y border-cyan-500/10 py-6 my-6 leading-relaxed">
+        <p class="font-mono-sys text-xs text-cyan-400/80 mb-2 uppercase tracking-widest">&#187; Developer Invitation</p>
+        <p class="text-lg">
+          A new player has requested access to the personal logs of <strong class="text-white">Rajat Sharma</strong>.
+        </p>
+        <div class="mt-4 bg-cyan-950/20 border border-cyan-500/10 p-4 rounded text-sm space-y-2">
+          <div><strong class="text-gray-400">CLASS:</strong> <span
+              class="text-cyan-400 font-semibold font-mono-sys">S-Rank Software Engineer</span></div>
+          <div><strong class="text-gray-400">RANK:</strong> <span
+              class="text-yellow-400 font-bold font-mono-sys">S-CLASS DEVELOPER</span></div>
+          <div><strong class="text-gray-400">FATIGUE:</strong> <span class="text-green-400 font-mono-sys">0 / 100</span>
           </div>
-          <p class="text-xs text-yellow-500/80 italic mt-2">
-            *Notice: Accepting initializes the system audio synthetics & interactive dashboard.
-          </p>
         </div>
-        <div class="flex justify-center space-x-6 mt-6">
-          <button id="acceptBtn" class="px-8 py-3 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 hover:text-white border border-cyan-500 font-bold font-mono-sys rounded tracking-wider transition duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
-            ACCEPT
-          </button>
-          <button id="declineBtn" class="px-8 py-3 bg-red-950/20 hover:bg-red-950/40 text-red-400 hover:text-red-300 border border-red-950 font-bold font-mono-sys rounded tracking-wider transition duration-300 transform hover:scale-105 active:scale-95">
-            DECLINE
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- SYSTEM OVERLAY FOR ARISE ACTIVATION -->
-    <div id="ariseOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 pointer-events-none opacity-0 transition-opacity duration-1000">
-      <div class="text-center font-mono-sys">
-        <h1 class="text-6xl md:text-8xl font-black text-purple-500 tracking-[0.2em] uppercase select-none system-overlay-text mb-4">
-          ARISE
-        </h1>
-        <p class="text-gray-400 text-sm md:text-lg tracking-widest uppercase">
-          [ The Shadow Monarch's Authority has Been Activated ]
+        <p class="text-xs text-yellow-500/80 italic mt-2">
+          *Notice: Accepting initializes the system audio synthetics & interactive dashboard.
         </p>
       </div>
+      <div class="flex justify-center space-x-6 mt-6">
+        <button id="acceptBtn"
+          class="px-8 py-3 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 hover:text-white border border-cyan-500 font-bold font-mono-sys rounded tracking-wider transition duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+          ACCEPT
+        </button>
+        <button id="declineBtn"
+          class="px-8 py-3 bg-red-950/20 hover:bg-red-950/40 text-red-400 hover:text-red-300 border border-red-950 font-bold font-mono-sys rounded tracking-wider transition duration-300 transform hover:scale-105 active:scale-95">
+          DECLINE
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- MAIN APP STRUCTURE -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col min-h-screen">
-      
-      <!-- HEADER / STATUS STATUS BAR -->
-      <header class="neon-panel rounded-lg p-4 mb-6 flex flex-col md:flex-row justify-between items-center gap-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent to-cyan-500"></div>
-        
-        <!-- Left: Logo & Title -->
-        <div class="flex items-center space-x-4">
-          <div class="h-10 w-10 rounded border border-cyan-500/40 flex items-center justify-center bg-cyan-950/30 text-cyan-400 font-bold font-mono-sys text-xl relative group">
-            <span class="group-hover:scale-110 transition-transform">R</span>
-            <div class="absolute inset-0 border border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
-          </div>
-          <div>
-            <h1 class="text-xl md:text-2xl font-bold font-mono-sys text-white tracking-widest flex items-center gap-2">
-              RAJAT SHARMA
-              <span id="headerLevel" class="text-xs px-2 py-0.5 border border-yellow-500/50 text-yellow-400 rounded bg-yellow-500/10 font-tech font-bold uppercase">LV. 99</span>
-            </h1>
-            <p id="headerJob" class="text-xs text-cyan-400 tracking-wider font-tech uppercase">Class: S-Rank AI & Full-Stack Specialist</p>
-          </div>
-        </div>
+  <!-- SYSTEM OVERLAY FOR ARISE ACTIVATION -->
+  <div id="ariseOverlay"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 pointer-events-none opacity-0 transition-opacity duration-1000">
+    <div class="text-center font-mono-sys">
+      <h1
+        class="text-6xl md:text-8xl font-black text-purple-500 tracking-[0.2em] uppercase select-none system-overlay-text mb-4">
+        ARISE
+      </h1>
+      <p class="text-gray-400 text-sm md:text-lg tracking-widest uppercase">
+        [ The Shadow Monarch's Authority has Been Activated ]
+      </p>
+    </div>
+  </div>
 
-        <!-- Center: Health / Mana / Fatigue Bars -->
-        <div class="flex flex-col gap-2 w-full max-w-xs md:max-w-md font-mono-sys text-xs">
-          <!-- HP Bar -->
-          <div class="flex justify-between items-center">
-            <span class="text-emerald-400 font-semibold tracking-wider">HP</span>
-            <div class="w-4/5 h-2 bg-gray-900 border border-emerald-500/30 rounded-full overflow-hidden relative">
-              <div class="h-full bg-emerald-500 w-full transition-all duration-500 shadow-[0_0_8px_#10b981]"></div>
-            </div>
-            <span class="text-emerald-400 ml-2">100%</span>
-          </div>
-          <!-- MP Bar -->
-          <div class="flex justify-between items-center">
-            <span class="text-cyan-400 font-semibold tracking-wider">MP</span>
-            <div class="w-4/5 h-2 bg-gray-900 border border-cyan-500/30 rounded-full overflow-hidden relative">
-              <div class="h-full bg-cyan-500 w-full transition-all duration-500 shadow-[0_0_8px_#06b6d4]"></div>
-            </div>
-            <span class="text-cyan-400 ml-2">100%</span>
-          </div>
-          <!-- Fatigue Bar -->
-          <div class="flex justify-between items-center">
-            <span class="text-amber-500 font-semibold tracking-wider">FATIGUE</span>
-            <div class="w-4/5 h-2 bg-gray-900 border border-amber-500/30 rounded-full overflow-hidden relative">
-              <div id="fatigueBar" class="h-full bg-amber-500 w-0 transition-all duration-500 shadow-[0_0_8px_#f59e0b]"></div>
-            </div>
-            <span id="fatigueValue" class="text-amber-500 ml-2">0/100</span>
+  <!-- MAIN APP STRUCTURE -->
+  <div class="w-full mx-auto px-4 md:px-8 py-6 flex flex-col min-h-screen">
+
+    <!-- HEADER / STATUS STATUS BAR -->
+    <header
+      class="neon-panel rounded-lg p-4 mb-6 flex flex-col md:flex-row justify-between items-center gap-4 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent to-cyan-500"></div>
+
+      <!-- Left: Logo & Title -->
+      <div class="flex items-center space-x-4">
+        <div
+          class="h-10 w-10 rounded border border-cyan-500/40 flex items-center justify-center bg-cyan-950/30 text-cyan-400 font-bold font-mono-sys text-xl relative group">
+          <span class="group-hover:scale-110 transition-transform">R</span>
+          <div
+            class="absolute inset-0 border border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity rounded">
           </div>
         </div>
-
-        <!-- Right: Actions & Audio Controller & Clock -->
-        <div class="flex items-center space-x-4 font-mono-sys text-xs">
-          <div class="text-right hidden md:block">
-            <p class="text-gray-400 text-[10px] uppercase">System Clock</p>
-            <p id="systemClock" class="text-white font-bold text-sm tracking-wider">00:00:00</p>
-          </div>
-          
-          <!-- Audio Toggle Button -->
-          <button id="audioToggleBtn" class="p-2 border border-cyan-500/30 hover:border-cyan-400 text-cyan-400 hover:text-white rounded bg-cyan-950/20 transition-all" title="Toggle System Sound">
-            <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-            </svg>
-          </button>
-          
-          <!-- Arise Command Button -->
-          <button id="headerAriseBtn" class="px-4 py-2 border border-purple-500/50 hover:border-purple-400 text-purple-400 hover:text-white rounded bg-purple-950/20 font-bold tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)]">
-            ARISE
-          </button>
+        <div>
+          <h1 class="text-xl md:text-2xl font-bold font-mono-sys text-white tracking-widest flex items-center gap-2">
+            RAJAT SHARMA
+            <span id="headerLevel"
+              class="text-xs px-2 py-0.5 border border-yellow-500/50 text-yellow-400 rounded bg-yellow-500/10 font-tech font-bold uppercase">LV.
+              99</span>
+          </h1>
+          <p id="headerJob" class="text-xs text-cyan-400 tracking-wider font-tech uppercase">Class: S-Rank Software
+            Engineer</p>
         </div>
-      </header>
+      </div>
 
-      <!-- MAIN CONTENT MATRIX -->
-      <main class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start flex-grow">
-        
-        <!-- LEFT COLUMN: STATUS & STATS WINDOW (lg:col-span-5) -->
-        <section class="lg:col-span-5 neon-panel rounded-lg p-6 relative overflow-hidden flex flex-col gap-6">
-          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-cyan-500/5 to-transparent pointer-events-none"></div>
-          
-          <!-- Header title -->
-          <div class="border-b border-cyan-500/20 pb-3 flex justify-between items-center">
-            <h2 class="text-lg font-bold font-mono-sys tracking-wider text-white uppercase flex items-center gap-2">
-              <span class="inline-block w-2 h-2 bg-cyan-400 rounded-full animate-ping"></span>
-              [ Status Window ]
-            </h2>
-            <button id="resetStatsBtn" class="text-xs px-2 py-1 border border-cyan-500/30 hover:border-cyan-400 rounded bg-cyan-950/30 text-cyan-400 transition-colors uppercase font-mono-sys">
-              Reset Stats
-            </button>
+      <!-- Center: Health / Mana / Fatigue Bars -->
+      <div class="flex flex-col gap-2 w-full max-w-xs md:max-w-md font-mono-sys text-xs">
+        <!-- HP Bar -->
+        <div class="flex justify-between items-center">
+          <span class="text-emerald-400 font-semibold tracking-wider">HP</span>
+          <div class="w-4/5 h-2 bg-gray-900 border border-emerald-500/30 rounded-full overflow-hidden relative">
+            <div class="h-full bg-emerald-500 w-full transition-all duration-500 shadow-[0_0_8px_#10b981]"></div>
           </div>
-
-          <!-- Avatar Frame & Bio Details -->
-          <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <!-- Animated Aura Frame -->
-            <div class="relative w-32 h-32 md:w-36 md:h-36 rounded-lg border-2 border-cyan-500/40 p-1 bg-slate-950 overflow-hidden group shadow-[0_0_15px_rgba(0,240,255,0.1)]">
-              <!-- Aura Canvas Overlay -->
-              <canvas id="auraCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
-              
-              <!-- Avatar Graphic -->
-              <div class="w-full h-full rounded bg-slate-900 flex items-center justify-center relative overflow-hidden">
-                <!-- Silhouette SVG -->
-                <svg id="avatarSvg" class="w-24 h-24 md:w-28 md:h-28 text-cyan-500/20 transition-all duration-1000" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-                
-                <!-- Glowing eyes effect -->
-                <div class="absolute top-[42%] left-[43%] w-1 h-1 bg-cyan-400 rounded-full shadow-[0_0_6px_#00f0ff] animate-pulse"></div>
-                <div class="absolute top-[42%] left-[54%] w-1 h-1 bg-cyan-400 rounded-full shadow-[0_0_6px_#00f0ff] animate-pulse"></div>
-              </div>
-            </div>
-
-            <!-- Profile Overview Details -->
-            <div class="flex-grow font-tech text-sm space-y-2 w-full text-center sm:text-left">
-              <div>
-                <span class="text-gray-400 uppercase">NAME:</span>
-                <span class="text-white text-lg font-bold tracking-wider ml-2">RAJAT SHARMA</span>
-              </div>
-              <div>
-                <span class="text-gray-400 uppercase">TITLE:</span>
-                <span id="statTitle" class="text-cyan-400 font-bold ml-2">MONARCH OF INTEGRATIONS</span>
-              </div>
-              <div>
-                <span class="text-gray-400 uppercase">CLASS:</span>
-                <span id="statClass" class="text-white ml-2">SOFTWARE DEV (AI & FULL-STACK)</span>
-              </div>
-              <div>
-                <span class="text-gray-400 uppercase">RANK:</span>
-                <span class="text-yellow-400 font-bold ml-2">S-RANK</span>
-              </div>
-              <div>
-                <span class="text-gray-400 uppercase">COMBAT RATING:</span>
-                <span id="combatPowerIndex" class="text-red-400 font-bold ml-2 font-mono-sys">9,420</span>
-              </div>
+          <span class="text-emerald-400 ml-2">100%</span>
+        </div>
+        <!-- MP Bar -->
+        <div class="flex justify-between items-center">
+          <span class="text-cyan-400 font-semibold tracking-wider">MP</span>
+          <div class="w-4/5 h-2 bg-gray-900 border border-cyan-500/30 rounded-full overflow-hidden relative">
+            <div class="h-full bg-cyan-500 w-full transition-all duration-500 shadow-[0_0_8px_#06b6d4]"></div>
+          </div>
+          <span class="text-cyan-400 ml-2">100%</span>
+        </div>
+        <!-- Fatigue Bar -->
+        <div class="flex justify-between items-center">
+          <span class="text-amber-500 font-semibold tracking-wider">FATIGUE</span>
+          <div class="w-4/5 h-2 bg-gray-900 border border-amber-500/30 rounded-full overflow-hidden relative">
+            <div id="fatigueBar" class="h-full bg-amber-500 w-0 transition-all duration-500 shadow-[0_0_8px_#f59e0b]">
             </div>
           </div>
+          <span id="fatigueValue" class="text-amber-500 ml-2">0/100</span>
+        </div>
+      </div>
 
-          <!-- Dynamic Stat Allocation -->
-          <div class="space-y-4 border-t border-cyan-500/10 pt-4 relative">
-            <div class="flex justify-between items-center text-sm font-mono-sys mb-2">
-              <span class="text-gray-400">UNUSED STAT POINTS</span>
-              <span id="unusedPoints" class="text-yellow-400 font-bold text-lg">5</span>
-            </div>
+      <!-- Right: Actions & Audio Controller & Clock -->
+      <div class="flex items-center space-x-4 font-mono-sys text-xs">
+        <div class="text-right hidden md:block">
+          <p class="text-gray-400 text-[10px] uppercase">System Clock</p>
+          <p id="systemClock" class="text-white font-bold text-sm tracking-wider">00:00:00</p>
+        </div>
 
-            <!-- Stats Rows -->
-            <div id="statsContainer" class="space-y-3 font-tech text-base">
-              <!-- STR -->
-              <div class="flex items-center justify-between group" data-stat="str">
-                <div class="w-1/3 flex flex-col">
-                  <span class="text-white font-bold tracking-wider">STR <span class="text-xs text-gray-500 font-normal">(Strength)</span></span>
-                  <span class="text-[10px] text-gray-400 leading-none">Backend / APIs</span>
-                </div>
-                <div class="w-1/2 flex items-center gap-2">
-                  <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
-                    <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 90%"></div>
-                  </div>
-                  <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">90</span>
-                </div>
-                <button class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
-              </div>
-              
-              <!-- AGI -->
-              <div class="flex items-center justify-between group" data-stat="agi">
-                <div class="w-1/3 flex flex-col">
-                  <span class="text-white font-bold tracking-wider">AGI <span class="text-xs text-gray-500 font-normal">(Agility)</span></span>
-                  <span class="text-[10px] text-gray-400 leading-none">Frontend / JS</span>
-                </div>
-                <div class="w-1/2 flex items-center gap-2">
-                  <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
-                    <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 85%"></div>
-                  </div>
-                  <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">85</span>
-                </div>
-                <button class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
-              </div>
+        <!-- Audio Toggle Button -->
+        <button id="audioToggleBtn"
+          class="p-2 border border-cyan-500/30 hover:border-cyan-400 text-cyan-400 hover:text-white rounded bg-cyan-950/20 transition-all"
+          title="Toggle System Sound">
+          <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+        </button>
 
-              <!-- VIT -->
-              <div class="flex items-center justify-between group" data-stat="vit">
-                <div class="w-1/3 flex flex-col">
-                  <span class="text-white font-bold tracking-wider">VIT <span class="text-xs text-gray-500 font-normal">(Vitality)</span></span>
-                  <span class="text-[10px] text-gray-400 leading-none">Cloud / DevOps</span>
-                </div>
-                <div class="w-1/2 flex items-center gap-2">
-                  <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
-                    <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 75%"></div>
-                  </div>
-                  <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">75</span>
-                </div>
-                <button class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
-              </div>
+        <!-- Arise Command Button -->
+        <button id="headerAriseBtn"
+          class="px-4 py-2 border border-purple-500/50 hover:border-purple-400 text-purple-400 hover:text-white rounded bg-purple-950/20 font-bold tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)]">
+          ARISE
+        </button>
+      </div>
+    </header>
 
-              <!-- INT -->
-              <div class="flex items-center justify-between group" data-stat="int">
-                <div class="w-1/3 flex flex-col">
-                  <span class="text-white font-bold tracking-wider">INT <span class="text-xs text-gray-500 font-normal">(Intelligence)</span></span>
-                  <span class="text-[10px] text-gray-400 leading-none">Databases</span>
-                </div>
-                <div class="w-1/2 flex items-center gap-2">
-                  <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
-                    <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 80%"></div>
-                  </div>
-                  <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">80</span>
-                </div>
-                <button class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
-              </div>
+    <!-- MAIN CONTENT MATRIX -->
+    <main class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start flex-grow">
 
-              <!-- SEN -->
-              <div class="flex items-center justify-between group" data-stat="sen">
-                <div class="w-1/3 flex flex-col">
-                  <span class="text-white font-bold tracking-wider">SEN <span class="text-xs text-gray-500 font-normal">(Sense)</span></span>
-                  <span class="text-[10px] text-gray-400 leading-none">AI / RAG / Agents</span>
-                </div>
-                <div class="w-1/2 flex items-center gap-2">
-                  <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
-                    <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 95%"></div>
-                  </div>
-                  <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">95</span>
-                </div>
-                <button class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
-              </div>
-            </div>
-          </div>
+      <!-- LEFT COLUMN: STATUS & STATS WINDOW (lg:col-span-5) -->
+      <section class="lg:col-span-5 neon-panel rounded-lg p-6 relative overflow-hidden flex flex-col gap-6">
+        <div
+          class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-cyan-500/5 to-transparent pointer-events-none">
+        </div>
 
-          <!-- Custom SVG Radar Pentagon -->
-          <div class="border-t border-cyan-500/10 pt-4 flex flex-col items-center">
-            <span class="text-xs font-mono-sys text-gray-400 uppercase tracking-widest mb-3">Stat Polygon</span>
-            <div class="w-full relative flex justify-center">
-              <svg id="radarSvg" viewBox="0 0 300 300" class="w-full max-w-[240px] md:max-w-[270px] filter drop-shadow-[0_0_10px_rgba(0,240,255,0.15)]">
-                <defs>
-                  <filter id="svgGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-                
-                <!-- Inner grid polygons -->
-                <polygon points="150,30 264,113 221,247 79,247 36,113" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                <polygon points="150,60 236,122 203,223 97,223 64,122" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-                <polygon points="150,90 207,132 186,198 114,198 93,132" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                <polygon points="150,120 179,141 168,174 132,174 121,141" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
-                
-                <!-- Axes lines -->
-                <line x1="150" y1="150" x2="150" y2="30" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                <line x1="150" y1="150" x2="264" y2="113" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                <line x1="150" y1="150" x2="221" y2="247" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                <line x1="150" y1="150" x2="79" y2="247" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                <line x1="150" y1="150" x2="36" y2="113" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-
-                <!-- Axes Labels -->
-                <text x="150" y="20" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold" class="font-tech">STR (Backend)</text>
-                <text x="270" y="113" text-anchor="start" fill="#94a3b8" font-size="9" font-weight="bold" class="font-tech">AGI (Frontend)</text>
-                <text x="231" y="260" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold" class="font-tech">VIT (DevOps)</text>
-                <text x="69" y="260" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold" class="font-tech">INT (DB)</text>
-                <text x="30" y="113" text-anchor="end" fill="#94a3b8" font-size="9" font-weight="bold" class="font-tech">SEN (AI)</text>
-
-                <!-- Active Stat Area Polygon -->
-                <polygon id="statPolygon" points="" fill="rgba(0, 240, 255, 0.15)" stroke="var(--primary)" stroke-width="2" filter="url(#svgGlow)" style="transition: all 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);" />
-                
-                <!-- Dots on vertices -->
-                <circle id="dotStr" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
-                <circle id="dotAgi" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
-                <circle id="dotVit" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
-                <circle id="dotInt" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
-                <circle id="dotSen" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
-              </svg>
-            </div>
-          </div>
-        </section>
-
-        <!-- RIGHT COLUMN: MAIN PANEL (lg:col-span-7) -->
-        <section class="lg:col-span-7 neon-panel rounded-lg flex flex-col h-full min-h-[600px] overflow-hidden">
-          
-          <!-- Tabs Navigation -->
-          <div class="flex border-b border-cyan-500/20 bg-cyan-950/10 font-mono-sys text-xs md:text-sm">
-            <button data-tab="status" class="sys-tab-btn active flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
-              [ STATUS ]
-            </button>
-            <button data-tab="skills" class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
-              [ SKILLS ]
-            </button>
-            <button data-tab="quests" class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
-              [ QUESTS ]
-            </button>
-            <button data-tab="inventory" class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
-              [ INVENTORY ]
-            </button>
-          </div>
-
-          <!-- Tabs Content Body -->
-          <div class="p-6 flex-grow overflow-y-auto">
-            
-            <!-- TABS 1: STATUS INFO -->
-            <div id="tab-status" class="tab-pane space-y-6">
-              <!-- Bio Description Box -->
-              <div class="space-y-4">
-                <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Hunter Biography</h3>
-                <div class="bg-cyan-950/10 border border-cyan-500/10 p-4 rounded text-sm text-gray-300 leading-relaxed font-sans">
-                  Innovative Software Developer with expertise in building full-stack applications and AI-driven solutions. Proven ability to architect and deploy scalable systems using React, Node.js, Python, and Generative AI to solve complex problems and deliver significant business impact. Passionate about creating efficient, user-centric products and enhancing workflows through automation.
-                </div>
-              </div>
-
-              <!-- Active Buffs & Skill Titles -->
-              <div class="space-y-4 border-t border-cyan-500/10 pt-4">
-                <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Acquired Titles & Buffs</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-tech">
-                  <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
-                    <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[T]</div>
-                    <div>
-                      <h4 id="titleName1" class="text-white font-bold tracking-wider uppercase text-sm">Monarch of Shadows</h4>
-                      <p class="text-gray-400 mt-1">Grants authority to compile and summon full-stack architectures. (+50% coding speed)</p>
-                    </div>
-                  </div>
-                  <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
-                    <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
-                    <div>
-                      <h4 class="text-white font-bold tracking-wider uppercase text-sm">MCA Core Sync</h4>
-                      <p class="text-gray-400 mt-1">Acquired from Bharati Vidyapeeth (BVICAM) dungeon. Increases base intelligence. (+9.0 CGPA multiplier)</p>
-                    </div>
-                  </div>
-                  <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
-                    <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
-                    <div>
-                      <h4 class="text-white font-bold tracking-wider uppercase text-sm">Agile Sprint Aura</h4>
-                      <p class="text-gray-400 mt-1">Grants immunity to scheduling delays. Greatly coordinates team workflows.</p>
-                    </div>
-                  </div>
-                  <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
-                    <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
-                    <div>
-                      <h4 class="text-white font-bold tracking-wider uppercase text-sm">RAG Perception</h4>
-                      <p class="text-gray-400 mt-1">Gives insight to query external vector databases with high accuracy and low latency.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TABS 2: SKILLS (RUNE STONES) -->
-            <div id="tab-skills" class="tab-pane hidden space-y-4">
-              <div class="flex justify-between items-center mb-2">
-                <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Active Skill Runes</h3>
-                <span class="text-xs text-gray-400">Click a Rune to Inspect Description</span>
-              </div>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <!-- Skill 1 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('Automated Document Processing', 'S-Rank Active Skill. Integrates GoHighLevel CRM with AI-powered document processing to extract metadata, reducing manual file reviews by 80%.', '0s', '45 MP')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">S</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">Document Auto-Process</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / AI Filter</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">MP: 45</div>
-                </div>
-
-                <!-- Skill 2 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('AI Voice Summons', 'S-Rank Summoning Skill. Deploys conversational AI agents equipped with contextual memory for patient consultations and client inquiries.', '10s', '80 MP')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">S</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">AI Voice Summons</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Summon / Speech API</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">MP: 80</div>
-                </div>
-
-                <!-- Skill 3 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('MCP Server Integration', 'A-Rank Active Skill. Connects large language models to workspace environments, enabling agent actions in Asana, GitHub, and local terminals.', '0s', '30 MP')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">A</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">MCP Server Sync</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / Tool-Agent</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">MP: 30</div>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('Project Import/Export Scroll', 'A-Rank Passive Skill. Automates the migration and backup matrices of no-code platforms (DrapCode) with complete integrity preservation.', 'None', 'Passive')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">A</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">Platform Transmute</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Passive / SDK Core</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">Passive</div>
-                </div>
-
-                <!-- Skill 5 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('RAG Vector Senses', 'S-Rank Passive Skill. Elevates the user\'s situational awareness to query vector store structures, optimizing semantic searches.', 'None', 'Passive')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">S</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">RAG Vector Senses</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Passive / Search</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">Passive</div>
-                </div>
-
-                <!-- Skill 6 -->
-                <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4" onclick="inspectSkill('RBAC Domain Seal', 'A-Rank Active Spell. Injects granular role-based access control filters and onboarding scripts to shield databases.', '5s', '15 MP')">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">A</div>
-                    <div>
-                      <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">RBAC Domain Seal</h4>
-                      <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / Security</p>
-                    </div>
-                  </div>
-                  <div class="text-xs font-mono-sys text-gray-500">MP: 15</div>
-                </div>
-              </div>
-
-              <!-- Skill Details Box -->
-              <div id="skillDetailsBox" class="mt-4 p-4 border border-cyan-500/20 bg-cyan-950/20 rounded hidden">
-                <div class="flex justify-between items-start">
-                  <h4 id="detailSkillName" class="text-white font-bold font-mono-sys uppercase text-base tracking-wider">Skill Name</h4>
-                  <span id="detailSkillCost" class="text-xs text-cyan-400 font-mono-sys">MP: 45</span>
-                </div>
-                <div id="detailSkillDesc" class="text-sm text-gray-300 mt-2 font-sans">Skill description details go here.</div>
-                <div class="mt-3 flex gap-4 text-xs text-gray-400 font-mono-sys">
-                  <div>COOLDOWN: <span id="detailSkillCooldown" class="text-white font-semibold">0s</span></div>
-                  <div>REQ: <span class="text-white font-semibold">Software Developer Sync</span></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TABS 3: QUESTS (WORK EXPERIENCE & PROJECTS) -->
-            <div id="tab-quests" class="tab-pane hidden space-y-6">
-              <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Chrono-Quest Log</h3>
-              
-              <!-- Quest 1 -->
-              <div class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
-                <div class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
-                  Completed
-                </div>
-                <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Urgent Quest: Deploy Voxing.ai Platform</h4>
-                <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: High-Rank System Automation</p>
-                <div class="mt-3 space-y-1 text-sm text-gray-300 font-sans pl-4 list-disc">
-                  <div>&#8226; Built secure Node.js backend using an MCP server to orchestrate autonomous AI agents.</div>
-                  <div>&#8226; Integrated intelligent speech and text APIs (OpenAI, Gemini, Deepgram) to issue tools like Asana and GitHub.</div>
-                  <div>&#8226; Engineered Chrome extension widgets securing client-server communications.</div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys">
-                  <span class="text-emerald-400">Quest Reward: S-Rank Agent Widget</span>
-                  <a href="https://voxing.ai" target="_blank" class="text-cyan-400 hover:text-white underline">Voxing.ai Link &rarr;</a>
-                </div>
-              </div>
-
-              <!-- Quest 2 -->
-              <div class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
-                <div class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
-                  Completed
-                </div>
-                <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Daily Quest: Core Developer Duty (LCNC)</h4>
-                <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Professional S-Rank Mission</p>
-                <div class="mt-3 space-y-1 text-sm text-gray-300 font-sans pl-4 list-disc">
-                  <div>&#8226; Restructured medical registry: integrated GoHighLevel CRM with AI processors, reducing manual overhead by 80%.</div>
-                  <div>&#8226; Generated OpenAI + Langchain automated nexus engines for doctor documentation.</div>
-                  <div>&#8226; Assembled patient consult voice agents with memory.</div>
-                  <div>&#8226; Integrated DocuSign and ImaginePay plugin structures into DrapCode.</div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys text-emerald-400">
-                  <span>Quest Reward: 80% Time Reduction (Gold Medal)</span>
-                  <span>Jan 2024 - Present</span>
-                </div>
-              </div>
-
-              <!-- Quest 3 -->
-              <div class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
-                <div class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
-                  Completed
-                </div>
-                <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Quest: Master of Computer Applications (MCA)</h4>
-                <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Academic Trials (BVICAM)</p>
-                <p class="text-sm text-gray-300 font-sans mt-2">
-                  Completed academic syllabus at Bharati Vidyapeeth's Institute of Computer Applications and Management (BVICAM), New Delhi.
-                </p>
-                <div class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys">
-                  <span class="text-yellow-400">Clear Reward: MCA Title (CGPA: 9.0 / 10.0)</span>
-                  <span class="text-gray-400">2022 - 2024</span>
-                </div>
-              </div>
-
-              <!-- Quest 4 (In Progress) -->
-              <div class="border border-cyan-500/30 bg-cyan-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(6,182,212,0.02)]">
-                <div class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-cyan-400 border border-cyan-400 bg-cyan-500/10 rounded uppercase animate-pulse">
-                  Active
-                </div>
-                <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Legendary Quest: Secure Next Engineering Venture</h4>
-                <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Career S-Rank Trial</p>
-                <p class="text-sm text-gray-300 font-sans mt-2">
-                  Acquire an impactful position inside an progressive engineering ecosystem. Unleash AI, API architectures, and automation models to clear team metrics.
-                </p>
-                <div class="mt-4 pt-3 border-t border-cyan-500/10 flex justify-between items-center text-xs font-mono-sys text-cyan-400">
-                  <span>Current Objective: Step Into the Contact Gate</span>
-                  <span>Ongoing</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- TABS 4: INVENTORY -->
-            <div id="tab-inventory" class="tab-pane hidden space-y-6">
-              <div class="flex justify-between items-center mb-2">
-                <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Storage Vault</h3>
-                <span class="text-xs text-gray-400">Select an Item to Equip or Use</span>
-              </div>
-
-              <!-- Inventory Grid -->
-              <div class="grid grid-cols-4 sm:grid-cols-6 gap-3">
-                <!-- Slot 1 -->
-                <div class="inv-box filled rounded-lg p-1" onclick="selectInventoryItem('OpenAI & Langchain Scroll', 'LEGENDARY ITEM', 'A secret formula enabling the generation of contextual AI medical letters, schemas, and chat interfaces. Using this item establishes a telepathic connection.', 'use-email')">
-                  <div class="w-full h-full flex items-center justify-center relative">
-                    <svg class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-purple-400 font-bold">LGD</span>
-                  </div>
-                </div>
-
-                <!-- Slot 2 -->
-                <div class="inv-box filled rounded-lg p-1" onclick="selectInventoryItem('Voxing.ai Chrome Widget', 'EPIC ITEM', 'A pluggable browser attachment facilitating rapid task commands through direct voice and text feeds to backend agents.', 'visit-url', 'https://voxing.ai')">
-                  <div class="w-full h-full flex items-center justify-center relative">
-                    <svg class="w-8 h-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-yellow-500 font-bold">EPC</span>
-                  </div>
-                </div>
-
-                <!-- Slot 3 -->
-                <div class="inv-box filled rounded-lg p-1" onclick="selectInventoryItem('DrapCode Developer SDK', 'EPIC ITEM', 'An developer kit allowing external platforms to coordinate with the Drapcode no-code core.', 'visit-url', 'https://drapcode.com')">
-                  <div class="w-full h-full flex items-center justify-center relative">
-                    <svg class="w-8 h-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                    <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-yellow-500 font-bold">EPC</span>
-                  </div>
-                </div>
-
-                <!-- Slot 4 -->
-                <div class="inv-box filled rounded-lg p-1" onclick="selectInventoryItem('BVICAM Graduation Certificate', 'RARE ITEM', 'Proof of clear completion from Bharati Vidyapeeth\'s academic testing ground. Confirms MCA status.', 'display-toast')">
-                  <div class="w-full h-full flex items-center justify-center relative">
-                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                    </svg>
-                    <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-cyan-400 font-bold">RAR</span>
-                  </div>
-                </div>
-
-                <!-- Slot 5 -->
-                <div class="inv-box filled rounded-lg p-1" onclick="selectInventoryItem('Teleportation Gate Crystal', 'COMMON ITEM', 'A small humming space shard. Cracking it activates the contact terminal and relocates you down to the contact area.', 'teleport-contact')">
-                  <div class="w-full h-full flex items-center justify-center relative">
-                    <svg class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-gray-400 font-bold">COM</span>
-                  </div>
-                </div>
-
-                <!-- Slot 6 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 7 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 8 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 9 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 10 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 11 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-                <!-- Slot 12 (Empty) -->
-                <div class="inv-box rounded-lg"></div>
-              </div>
-
-              <!-- Item Inspector Panel -->
-              <div id="itemInspector" class="p-4 border border-cyan-500/20 bg-cyan-950/20 rounded hidden flex flex-col gap-3">
-                <div class="flex justify-between items-start">
-                  <div>
-                    <h4 id="inspectItemName" class="text-white font-bold font-mono-sys uppercase text-base tracking-wider">Item Name</h4>
-                    <span id="inspectItemRarity" class="text-xs text-purple-400 font-bold font-mono-sys tracking-wider">LEGENDARY ITEM</span>
-                  </div>
-                  <button id="useItemBtn" class="px-4 py-1.5 border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 rounded text-xs font-mono-sys uppercase tracking-wider transition-all">
-                    Use Item
-                  </button>
-                </div>
-                <p id="inspectItemDesc" class="text-sm text-gray-300 font-sans">Item description details go here.</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-      </main>
-
-      <!-- CONTACT SECTION: THE DIMENSIONAL GATE -->
-      <section id="contact" class="neon-panel rounded-lg p-6 md:p-8 mt-6 relative overflow-hidden">
-        <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tr from-cyan-500/5 to-transparent pointer-events-none"></div>
-        
-        <div class="max-w-3xl mx-auto text-center space-y-6">
-          <h2 class="text-2xl md:text-3xl font-bold font-mono-sys tracking-wider text-white uppercase">
-            [ Dimensional Contact Gate ]
+        <!-- Header title -->
+        <div class="border-b border-cyan-500/20 pb-3 flex justify-between items-center">
+          <h2 class="text-lg font-bold font-mono-sys tracking-wider text-white uppercase flex items-center gap-2">
+            <span class="inline-block w-2 h-2 bg-cyan-400 rounded-full animate-ping"></span>
+            [ Status Window ]
           </h2>
-          <p class="text-sm text-gray-400 max-w-xl mx-auto font-sans leading-relaxed">
-            Enter the portal to send messages or secure a link with Rajat Sharma. Recruiting and collaboration protocols are initialized inside this gate.
-          </p>
+          <button id="resetStatsBtn"
+            class="text-xs px-2 py-1 border border-cyan-500/30 hover:border-cyan-400 rounded bg-cyan-950/30 text-cyan-400 transition-colors uppercase font-mono-sys">
+            Reset Stats
+          </button>
+        </div>
 
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4 font-mono-sys text-sm">
-            <!-- Email -->
-            <a href="mailto:rajat.sharma.swe@gmail.com" onclick="playSound('click')" class="flex items-center space-x-3 px-6 py-3 border border-cyan-500/30 hover:border-cyan-400 rounded-lg bg-cyan-950/10 hover:bg-cyan-950/20 text-cyan-300 hover:text-white hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center group shadow-[0_0_15px_rgba(0,240,255,0.02)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>rajat.sharma.swe@gmail.com</span>
-            </a>
+        <!-- Avatar Frame & Bio Details -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <!-- Animated Aura Frame -->
+          <div
+            class="relative w-32 h-32 md:w-36 md:h-36 rounded-lg border-2 border-cyan-500/40 p-1 bg-slate-950 overflow-hidden group shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+            <!-- Aura Canvas Overlay -->
+            <canvas id="auraCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/rajat-sharma-swe" target="_blank" onclick="playSound('click')" class="flex items-center space-x-3 px-6 py-3 border border-cyan-500/30 hover:border-cyan-400 rounded-lg bg-cyan-950/10 hover:bg-cyan-950/20 text-cyan-300 hover:text-white hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center group shadow-[0_0_15px_rgba(0,240,255,0.02)]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-              <span>LinkedIn Profile</span>
-            </a>
+            <!-- Avatar Graphic -->
+            <div class="w-full h-full rounded bg-slate-900 flex items-center justify-center relative overflow-hidden">
+              <!-- Avatar Image -->
+              <img id="avatarImg" src="arise.png" alt="Rajat Sharma"
+                class="w-full h-full object-cover transition-all duration-1000" />
+            </div>
+          </div>
+
+          <!-- Profile Overview Details -->
+          <div class="flex-grow font-tech text-sm space-y-2 w-full text-center sm:text-left">
+            <div>
+              <span class="text-gray-400 uppercase">NAME:</span>
+              <span class="text-white text-lg font-bold tracking-wider ml-2">RAJAT SHARMA</span>
+            </div>
+            <div>
+              <span class="text-gray-400 uppercase">TITLE:</span>
+              <span id="statTitle" class="text-cyan-400 font-bold ml-2">MONARCH OF DEVELOPERS</span>
+            </div>
+            <div>
+              <span class="text-gray-400 uppercase">CLASS:</span>
+              <span id="statClass" class="text-white ml-2">S-RANK SOFTWARE ENGINEER</span>
+            </div>
+            <div>
+              <span class="text-gray-400 uppercase">RANK:</span>
+              <span class="text-yellow-400 font-bold ml-2">S-RANK</span>
+            </div>
+            <div>
+              <span class="text-gray-400 uppercase">COMBAT RATING:</span>
+              <span id="combatPowerIndex" class="text-red-400 font-bold ml-2 font-mono-sys">9,420</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Stat Allocation -->
+        <div class="space-y-4 border-t border-cyan-500/10 pt-4 relative">
+          <div class="flex justify-between items-center text-sm font-mono-sys mb-2">
+            <span class="text-gray-400">UNUSED STAT POINTS</span>
+            <span id="unusedPoints" class="text-yellow-400 font-bold text-lg">5</span>
+          </div>
+
+          <!-- Stats Rows -->
+          <div id="statsContainer" class="space-y-3 font-tech text-base">
+            <!-- STR -->
+            <div class="flex items-center justify-between group" data-stat="str">
+              <div class="w-1/3 flex flex-col">
+                <span class="text-white font-bold tracking-wider">STR <span
+                    class="text-xs text-gray-500 font-normal">(Strength)</span></span>
+                <span class="text-[10px] text-gray-400 leading-none">Backend / APIs</span>
+              </div>
+              <div class="w-1/2 flex items-center gap-2">
+                <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
+                  <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 90%">
+                  </div>
+                </div>
+                <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">90</span>
+              </div>
+              <button
+                class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
+            </div>
+
+            <!-- AGI -->
+            <div class="flex items-center justify-between group" data-stat="agi">
+              <div class="w-1/3 flex flex-col">
+                <span class="text-white font-bold tracking-wider">AGI <span
+                    class="text-xs text-gray-500 font-normal">(Agility)</span></span>
+                <span class="text-[10px] text-gray-400 leading-none">Frontend / JS</span>
+              </div>
+              <div class="w-1/2 flex items-center gap-2">
+                <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
+                  <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 85%">
+                  </div>
+                </div>
+                <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">85</span>
+              </div>
+              <button
+                class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
+            </div>
+
+            <!-- VIT -->
+            <div class="flex items-center justify-between group" data-stat="vit">
+              <div class="w-1/3 flex flex-col">
+                <span class="text-white font-bold tracking-wider">VIT <span
+                    class="text-xs text-gray-500 font-normal">(Vitality)</span></span>
+                <span class="text-[10px] text-gray-400 leading-none">Cloud / DevOps</span>
+              </div>
+              <div class="w-1/2 flex items-center gap-2">
+                <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
+                  <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 75%">
+                  </div>
+                </div>
+                <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">75</span>
+              </div>
+              <button
+                class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
+            </div>
+
+            <!-- INT -->
+            <div class="flex items-center justify-between group" data-stat="int">
+              <div class="w-1/3 flex flex-col">
+                <span class="text-white font-bold tracking-wider">INT <span
+                    class="text-xs text-gray-500 font-normal">(Intelligence)</span></span>
+                <span class="text-[10px] text-gray-400 leading-none">Databases</span>
+              </div>
+              <div class="w-1/2 flex items-center gap-2">
+                <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
+                  <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 80%">
+                  </div>
+                </div>
+                <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">80</span>
+              </div>
+              <button
+                class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
+            </div>
+
+            <!-- SEN -->
+            <div class="flex items-center justify-between group" data-stat="sen">
+              <div class="w-1/3 flex flex-col">
+                <span class="text-white font-bold tracking-wider">SEN <span
+                    class="text-xs text-gray-500 font-normal">(Sense)</span></span>
+                <span class="text-[10px] text-gray-400 leading-none">AI / RAG / Agents</span>
+              </div>
+              <div class="w-1/2 flex items-center gap-2">
+                <div class="flex-grow h-3 bg-gray-900 border border-cyan-500/20 rounded overflow-hidden p-0.5">
+                  <div class="stat-bar h-full bg-cyan-500/80 rounded-sm transition-all duration-300" style="width: 95%">
+                  </div>
+                </div>
+                <span class="stat-val text-white font-mono-sys font-bold w-8 text-right">95</span>
+              </div>
+              <button
+                class="add-stat-btn w-6 h-6 border border-cyan-500/40 text-cyan-400 hover:border-cyan-400 hover:text-white rounded flex items-center justify-center bg-cyan-950/20 font-bold hover:scale-105 active:scale-95 transition-all select-none">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom SVG Radar Pentagon -->
+        <div class="border-t border-cyan-500/10 pt-4 flex flex-col items-center">
+          <span class="text-xs font-mono-sys text-gray-400 uppercase tracking-widest mb-3">Stat Polygon</span>
+          <div class="w-full relative flex justify-center">
+            <svg id="radarSvg" viewBox="0 0 300 300"
+              class="w-full max-w-[240px] md:max-w-[270px] filter drop-shadow-[0_0_10px_rgba(0,240,255,0.15)]">
+              <defs>
+                <filter id="svgGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Inner grid polygons -->
+              <polygon points="150,30 264,113 221,247 79,247 36,113" fill="none" stroke="rgba(255,255,255,0.05)"
+                stroke-width="1" />
+              <polygon points="150,60 236,122 203,223 97,223 64,122" fill="none" stroke="rgba(255,255,255,0.08)"
+                stroke-width="1" />
+              <polygon points="150,90 207,132 186,198 114,198 93,132" fill="none" stroke="rgba(255,255,255,0.1)"
+                stroke-width="1" />
+              <polygon points="150,120 179,141 168,174 132,174 121,141" fill="none" stroke="rgba(255,255,255,0.15)"
+                stroke-width="1" />
+
+              <!-- Axes lines -->
+              <line x1="150" y1="150" x2="150" y2="30" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <line x1="150" y1="150" x2="264" y2="113" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <line x1="150" y1="150" x2="221" y2="247" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <line x1="150" y1="150" x2="79" y2="247" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <line x1="150" y1="150" x2="36" y2="113" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+
+              <!-- Axes Labels -->
+              <text x="150" y="20" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold"
+                class="font-tech">STR (Backend)</text>
+              <text x="270" y="113" text-anchor="start" fill="#94a3b8" font-size="9" font-weight="bold"
+                class="font-tech">AGI (Frontend)</text>
+              <text x="231" y="260" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold"
+                class="font-tech">VIT (DevOps)</text>
+              <text x="69" y="260" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="bold"
+                class="font-tech">INT (DB)</text>
+              <text x="30" y="113" text-anchor="end" fill="#94a3b8" font-size="9" font-weight="bold"
+                class="font-tech">SEN (AI)</text>
+
+              <!-- Active Stat Area Polygon -->
+              <polygon id="statPolygon" points="" fill="rgba(0, 240, 255, 0.15)" stroke="var(--primary)"
+                stroke-width="2" filter="url(#svgGlow)" style="transition: all 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);" />
+
+              <!-- Dots on vertices -->
+              <circle id="dotStr" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
+              <circle id="dotAgi" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
+              <circle id="dotVit" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
+              <circle id="dotInt" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
+              <circle id="dotSen" cx="150" cy="150" r="3" fill="var(--primary)" style="transition: all 0.4s ease;" />
+            </svg>
           </div>
         </div>
       </section>
 
-      <!-- HOTBAR QUICK SLOTS (FOOTER) -->
-      <footer class="mt-8 mb-4 flex flex-col items-center justify-center gap-4 text-center">
-        <!-- Hotbar slots -->
-        <div class="flex items-center gap-2 border border-cyan-500/25 bg-cyan-950/10 p-2 rounded-lg relative overflow-hidden">
-          <!-- Hotbar Item 1 -->
-          <a href="mailto:rajat.sharma.swe@gmail.com" class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group" title="[1] Send Email">
-            <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">1</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
-          
-          <!-- Hotbar Item 2 -->
-          <a href="https://linkedin.com/in/rajat-sharma-swe" target="_blank" class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group" title="[2] Visit LinkedIn">
-            <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">2</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-          </a>
+      <!-- RIGHT COLUMN: MAIN PANEL (lg:col-span-7) -->
+      <section class="lg:col-span-7 neon-panel rounded-lg flex flex-col h-full min-h-[600px] overflow-hidden">
 
-          <!-- Hotbar Item 3 -->
-          <a href="#contact" class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group" title="[3] Teleport to Gate">
-            <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">3</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            </svg>
-          </a>
-          
-          <!-- Hotbar Item 4 (Info Location) -->
-          <div class="w-10 h-10 border border-cyan-500/30 bg-cyan-950/30 text-cyan-400 rounded flex flex-col items-center justify-center relative select-none" title="Location: New Delhi, India">
-            <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">4</span>
-            <span class="text-[10px] font-bold font-mono-sys">DEL</span>
-          </div>
+        <!-- Tabs Navigation -->
+        <div class="flex border-b border-cyan-500/20 bg-cyan-950/10 font-mono-sys text-xs md:text-sm">
+          <button data-tab="status"
+            class="sys-tab-btn active flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
+            [ STATUS ]
+          </button>
+          <button data-tab="skills"
+            class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
+            [ SKILLS ]
+          </button>
+          <button data-tab="quests"
+            class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
+            [ QUESTS ]
+          </button>
+          <button data-tab="inventory"
+            class="sys-tab-btn flex-1 py-4 text-center hover:bg-cyan-500/5 tracking-wider uppercase font-semibold">
+            [ INVENTORY ]
+          </button>
         </div>
-        
-        <p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono-sys">
-          &copy; 2026 Rajat Sharma. System Synced and Authenticated.
-        </p>
-      </footer>
-    </div>
 
-    <!-- System JavaScript -->
-    <script src="script.js" defer></script>
-  </body>
+        <!-- Tabs Content Body -->
+        <div class="p-6 flex-grow overflow-y-auto">
+
+          <!-- TABS 1: STATUS INFO -->
+          <div id="tab-status" class="tab-pane space-y-6">
+            <!-- Bio Description Box -->
+            <div class="space-y-4">
+              <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Developer Biography</h3>
+              <div
+                class="bg-cyan-950/10 border border-cyan-500/10 p-4 rounded text-sm text-gray-300 leading-relaxed font-sans">
+                Innovative Software Developer with expertise in building full-stack applications and AI-driven
+                solutions. Proven ability to architect and deploy scalable systems using React, Node.js, Python, and
+                Generative AI to solve complex problems and deliver significant business impact. Passionate about
+                creating efficient, user-centric products and enhancing workflows through automation.
+              </div>
+            </div>
+
+            <!-- Active Buffs & Skill Titles -->
+            <div class="space-y-4 border-t border-cyan-500/10 pt-4">
+              <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Acquired Titles & Buffs
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-tech">
+                <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
+                  <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[T]</div>
+                  <div>
+                    <h4 id="titleName1" class="text-white font-bold tracking-wider uppercase text-sm">Monarch of Shadows
+                    </h4>
+                    <p class="text-gray-400 mt-1">Grants authority to compile and summon full-stack architectures. (+50%
+                      coding speed)</p>
+                  </div>
+                </div>
+                <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
+                  <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
+                  <div>
+                    <h4 class="text-white font-bold tracking-wider uppercase text-sm">MCA Core Sync</h4>
+                    <p class="text-gray-400 mt-1">Acquired from Bharati Vidyapeeth (BVICAM) dungeon. Increases base
+                      intelligence. (+9.0 CGPA multiplier)</p>
+                  </div>
+                </div>
+                <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
+                  <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
+                  <div>
+                    <h4 class="text-white font-bold tracking-wider uppercase text-sm">Agile Sprint Aura</h4>
+                    <p class="text-gray-400 mt-1">Grants immunity to scheduling delays. Greatly coordinates team
+                      workflows.</p>
+                  </div>
+                </div>
+                <div class="border border-cyan-500/15 bg-cyan-950/20 p-3 rounded flex items-start gap-3">
+                  <div class="text-cyan-400 text-lg font-mono-sys mt-0.5">[B]</div>
+                  <div>
+                    <h4 class="text-white font-bold tracking-wider uppercase text-sm">RAG Perception</h4>
+                    <p class="text-gray-400 mt-1">Gives insight to query external vector databases with high accuracy
+                      and low latency.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TABS 2: SKILLS (RUNE STONES) -->
+          <div id="tab-skills" class="tab-pane hidden space-y-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Active Skill Runes</h3>
+              <span class="text-xs text-gray-400">Click a Rune to Inspect Description</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Skill 1 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('Automated Document Processing', 'S-Rank Active Skill. Integrates GoHighLevel CRM with AI-powered document processing to extract metadata, reducing manual file reviews by 80%.', '0s', '45 MP')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">
+                    S</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">Document Auto-Process
+                    </h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / AI Filter</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">MP: 45</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('AI Voice Summons', 'S-Rank Summoning Skill. Deploys conversational AI agents equipped with contextual memory for patient consultations and client inquiries.', '10s', '80 MP')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">
+                    S</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">AI Voice Summons</h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Summon / Speech API</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">MP: 80</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('MCP Server Integration', 'A-Rank Active Skill. Connects large language models to workspace environments, enabling agent actions in Asana, GitHub, and local terminals.', '0s', '30 MP')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">
+                    A</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">MCP Server Sync</h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / Tool-Agent</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">MP: 30</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('Project Import/Export Scroll', 'A-Rank Passive Skill. Automates the migration and backup matrices of no-code platforms (DrapCode) with complete integrity preservation.', 'None', 'Passive')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">
+                    A</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">Platform Transmute</h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Passive / SDK Core</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">Passive</div>
+              </div>
+
+              <!-- Skill 5 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('RAG Vector Senses', 'S-Rank Passive Skill. Elevates the user\'s situational awareness to query vector store structures, optimizing semantic searches.', 'None', 'Passive')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-yellow-500/40 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400 font-mono-sys font-bold">
+                    S</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">RAG Vector Senses</h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Passive / Search</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">Passive</div>
+              </div>
+
+              <!-- Skill 6 -->
+              <div class="rune-stone rounded-lg p-4 flex items-center justify-between gap-4"
+                onclick="inspectSkill('RBAC Domain Seal', 'A-Rank Active Spell. Injects granular role-based access control filters and onboarding scripts to shield databases.', '5s', '15 MP')">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 border border-cyan-500/40 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-mono-sys font-bold">
+                    A</div>
+                  <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase font-tech">RBAC Domain Seal</h4>
+                    <p class="text-[10px] text-cyan-400 uppercase font-mono-sys">Type: Active / Security</p>
+                  </div>
+                </div>
+                <div class="text-xs font-mono-sys text-gray-500">MP: 15</div>
+              </div>
+            </div>
+
+            <!-- Skill Details Box -->
+            <div id="skillDetailsBox" class="mt-4 p-4 border border-cyan-500/20 bg-cyan-950/20 rounded hidden">
+              <div class="flex justify-between items-start">
+                <h4 id="detailSkillName" class="text-white font-bold font-mono-sys uppercase text-base tracking-wider">
+                  Skill Name</h4>
+                <span id="detailSkillCost" class="text-xs text-cyan-400 font-mono-sys">MP: 45</span>
+              </div>
+              <div id="detailSkillDesc" class="text-sm text-gray-300 mt-2 font-sans">Skill description details go here.
+              </div>
+              <div class="mt-3 flex gap-4 text-xs text-gray-400 font-mono-sys">
+                <div>COOLDOWN: <span id="detailSkillCooldown" class="text-white font-semibold">0s</span></div>
+                <div>REQ: <span class="text-white font-semibold">Software Developer Sync</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TABS 3: QUESTS (WORK EXPERIENCE & PROJECTS) -->
+          <div id="tab-quests" class="tab-pane hidden space-y-6">
+            <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Chrono-Quest Log</h3>
+
+            <!-- Quest 1 -->
+            <div
+              class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
+              <div
+                class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
+                Completed
+              </div>
+              <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Urgent Quest: Deploy
+                Voxing.ai Platform</h4>
+              <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: High-Rank System Automation</p>
+              <div class="mt-3 space-y-1 text-sm text-gray-300 font-sans pl-4 list-disc">
+                <div>&#8226; Built secure Node.js backend using an MCP server to orchestrate autonomous AI agents.</div>
+                <div>&#8226; Integrated intelligent speech and text APIs (OpenAI, Gemini, Deepgram) to issue tools like
+                  Asana and GitHub.</div>
+                <div>&#8226; Engineered Chrome extension widgets securing client-server communications.</div>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys">
+                <span class="text-emerald-400">Quest Reward: S-Rank Agent Widget</span>
+                <a href="https://voxing.ai" target="_blank" class="text-cyan-400 hover:text-white underline">Voxing.ai
+                  Link &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Quest 2 -->
+            <div
+              class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
+              <div
+                class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
+                Completed
+              </div>
+              <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Daily Quest: Core Developer
+                Duty (LCNC)</h4>
+              <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Professional S-Rank Mission</p>
+              <div class="mt-3 space-y-1 text-sm text-gray-300 font-sans pl-4 list-disc">
+                <div>&#8226; Restructured medical registry: integrated GoHighLevel CRM with AI processors, reducing
+                  manual overhead by 80%.</div>
+                <div>&#8226; Generated OpenAI + Langchain automated nexus engines for doctor documentation.</div>
+                <div>&#8226; Assembled patient consult voice agents with memory.</div>
+                <div>&#8226; Integrated DocuSign and ImaginePay plugin structures into DrapCode.</div>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys text-emerald-400">
+                <span>Quest Reward: 80% Time Reduction (Gold Medal)</span>
+                <span>Jan 2024 - Present</span>
+              </div>
+            </div>
+
+            <!-- Quest 3 -->
+            <div
+              class="border border-emerald-500/30 bg-emerald-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.02)]">
+              <div
+                class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-emerald-400 border border-emerald-400 bg-emerald-500/10 rounded uppercase">
+                Completed
+              </div>
+              <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Quest: Master of Computer
+                Applications (MCA)</h4>
+              <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Academic Trials (BVICAM)</p>
+              <p class="text-sm text-gray-300 font-sans mt-2">
+                Completed academic syllabus at Bharati Vidyapeeth's Institute of Computer Applications and Management
+                (BVICAM), New Delhi.
+              </p>
+              <div
+                class="mt-4 pt-3 border-t border-emerald-500/10 flex justify-between items-center text-xs font-mono-sys">
+                <span class="text-yellow-400">Clear Reward: MCA Title (CGPA: 9.0 / 10.0)</span>
+                <span class="text-gray-400">2022 - 2024</span>
+              </div>
+            </div>
+
+            <!-- Quest 4 (In Progress) -->
+            <div
+              class="border border-cyan-500/30 bg-cyan-950/5 rounded-lg p-4 relative overflow-hidden shadow-[0_0_15px_rgba(6,182,212,0.02)]">
+              <div
+                class="absolute right-3 top-3 px-2 py-0.5 text-[10px] font-bold font-mono-sys text-cyan-400 border border-cyan-400 bg-cyan-500/10 rounded uppercase animate-pulse">
+                Active
+              </div>
+              <h4 class="text-white font-bold text-base tracking-wider font-tech uppercase">Legendary Quest: Secure Next
+                Engineering Venture</h4>
+              <p class="text-xs text-yellow-500 font-mono-sys mt-1">Type: Career S-Rank Trial</p>
+              <p class="text-sm text-gray-300 font-sans mt-2">
+                Acquire an impactful position inside an progressive engineering ecosystem. Unleash AI, API
+                architectures, and automation models to clear team metrics.
+              </p>
+              <div
+                class="mt-4 pt-3 border-t border-cyan-500/10 flex justify-between items-center text-xs font-mono-sys text-cyan-400">
+                <span>Current Objective: Step Into the Contact Gate</span>
+                <span>Ongoing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TABS 4: INVENTORY -->
+          <div id="tab-inventory" class="tab-pane hidden space-y-6">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-sm font-mono-sys text-cyan-400 uppercase tracking-widest">&#187; Storage Vault</h3>
+              <span class="text-xs text-gray-400">Select an Item to Equip or Use</span>
+            </div>
+
+            <!-- Inventory Grid -->
+            <div class="grid grid-cols-4 sm:grid-cols-6 gap-3">
+              <!-- Slot 1 -->
+              <div class="inv-box filled rounded-lg p-1"
+                onclick="selectInventoryItem('OpenAI & Langchain Scroll', 'LEGENDARY ITEM', 'A secret formula enabling the generation of contextual AI medical letters, schemas, and chat interfaces. Using this item establishes a telepathic connection.', 'use-email')">
+                <div class="w-full h-full flex items-center justify-center relative">
+                  <svg class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-purple-400 font-bold">LGD</span>
+                </div>
+              </div>
+
+              <!-- Slot 2 -->
+              <div class="inv-box filled rounded-lg p-1"
+                onclick="selectInventoryItem('Voxing.ai Chrome Widget', 'EPIC ITEM', 'A pluggable browser attachment facilitating rapid task commands through direct voice and text feeds to backend agents.', 'visit-url', 'https://voxing.ai')">
+                <div class="w-full h-full flex items-center justify-center relative">
+                  <svg class="w-8 h-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-yellow-500 font-bold">EPC</span>
+                </div>
+              </div>
+
+              <!-- Slot 3 -->
+              <div class="inv-box filled rounded-lg p-1"
+                onclick="selectInventoryItem('DrapCode Developer SDK', 'EPIC ITEM', 'An developer kit allowing external platforms to coordinate with the Drapcode no-code core.', 'visit-url', 'https://drapcode.com')">
+                <div class="w-full h-full flex items-center justify-center relative">
+                  <svg class="w-8 h-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                  <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-yellow-500 font-bold">EPC</span>
+                </div>
+              </div>
+
+              <!-- Slot 4 -->
+              <div class="inv-box filled rounded-lg p-1"
+                onclick="selectInventoryItem('BVICAM Graduation Certificate', 'RARE ITEM', 'Proof of clear completion from Bharati Vidyapeeth\'s academic testing ground. Confirms MCA status.', 'display-toast')">
+                <div class="w-full h-full flex items-center justify-center relative">
+                  <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                  </svg>
+                  <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-cyan-400 font-bold">RAR</span>
+                </div>
+              </div>
+
+              <!-- Slot 5 -->
+              <div class="inv-box filled rounded-lg p-1"
+                onclick="selectInventoryItem('Teleportation Gate Crystal', 'COMMON ITEM', 'A small humming space shard. Cracking it activates the contact terminal and relocates you down to the contact area.', 'teleport-contact')">
+                <div class="w-full h-full flex items-center justify-center relative">
+                  <svg class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span class="absolute bottom-1 right-1 text-[8px] font-mono-sys text-gray-400 font-bold">COM</span>
+                </div>
+              </div>
+
+              <!-- Slot 6 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 7 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 8 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 9 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 10 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 11 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+              <!-- Slot 12 (Empty) -->
+              <div class="inv-box rounded-lg"></div>
+            </div>
+
+            <!-- Item Inspector Panel -->
+            <div id="itemInspector"
+              class="p-4 border border-cyan-500/20 bg-cyan-950/20 rounded hidden flex flex-col gap-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 id="inspectItemName"
+                    class="text-white font-bold font-mono-sys uppercase text-base tracking-wider">Item Name</h4>
+                  <span id="inspectItemRarity"
+                    class="text-xs text-purple-400 font-bold font-mono-sys tracking-wider">LEGENDARY ITEM</span>
+                </div>
+                <button id="useItemBtn"
+                  class="px-4 py-1.5 border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 rounded text-xs font-mono-sys uppercase tracking-wider transition-all">
+                  Use Item
+                </button>
+              </div>
+              <p id="inspectItemDesc" class="text-sm text-gray-300 font-sans">Item description details go here.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- CONTACT SECTION: THE DIMENSIONAL GATE -->
+    <section id="contact" class="neon-panel rounded-lg p-6 md:p-8 mt-6 relative overflow-hidden">
+      <div
+        class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tr from-cyan-500/5 to-transparent pointer-events-none">
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <h2 class="text-2xl md:text-3xl font-bold font-mono-sys tracking-wider text-white uppercase">
+          [ Dimensional Contact Gate ]
+        </h2>
+        <p class="text-sm text-gray-400 max-w-xl mx-auto font-sans leading-relaxed">
+          Enter the portal to send messages or secure a link with Rajat Sharma. Recruiting and collaboration protocols
+          are initialized inside this gate.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4 font-mono-sys text-sm">
+          <!-- Email -->
+          <a href="mailto:rajat.sharma.swe@gmail.com" onclick="playSound('click')"
+            class="flex items-center space-x-3 px-6 py-3 border border-cyan-500/30 hover:border-cyan-400 rounded-lg bg-cyan-950/10 hover:bg-cyan-950/20 text-cyan-300 hover:text-white hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center group shadow-[0_0_15px_rgba(0,240,255,0.02)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400 group-hover:animate-bounce" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>rajat.sharma.swe@gmail.com</span>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/rajat-sharma-swe" target="_blank" onclick="playSound('click')"
+            class="flex items-center space-x-3 px-6 py-3 border border-cyan-500/30 hover:border-cyan-400 rounded-lg bg-cyan-950/10 hover:bg-cyan-950/20 text-cyan-300 hover:text-white hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center group shadow-[0_0_15px_rgba(0,240,255,0.02)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOTBAR QUICK SLOTS (FOOTER) -->
+    <footer class="mt-8 mb-4 flex flex-col items-center justify-center gap-4 text-center">
+      <!-- Hotbar slots -->
+      <div
+        class="flex items-center gap-2 border border-cyan-500/25 bg-cyan-950/10 p-2 rounded-lg relative overflow-hidden">
+        <!-- Hotbar Item 1 -->
+        <a href="mailto:rajat.sharma.swe@gmail.com"
+          class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group"
+          title="[1] Send Email">
+          <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">1</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+
+        <!-- Hotbar Item 2 -->
+        <a href="https://linkedin.com/in/rajat-sharma-swe" target="_blank"
+          class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group"
+          title="[2] Visit LinkedIn">
+          <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">2</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+
+        <!-- Hotbar Item 3 -->
+        <a href="#contact"
+          class="w-10 h-10 border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/30 text-cyan-400 hover:text-white rounded flex flex-col items-center justify-center relative transition-all duration-300 hover:scale-110 group"
+          title="[3] Teleport to Gate">
+          <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">3</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          </svg>
+        </a>
+
+        <!-- Hotbar Item 4 (Info Location) -->
+        <div
+          class="w-10 h-10 border border-cyan-500/30 bg-cyan-950/30 text-cyan-400 rounded flex flex-col items-center justify-center relative select-none"
+          title="Location: New Delhi, India">
+          <span class="text-[7px] text-gray-500 absolute top-0.5 left-1 font-mono-sys">4</span>
+          <span class="text-[10px] font-bold font-mono-sys">DEL</span>
+        </div>
+      </div>
+
+      <p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono-sys">
+        &copy; 2026 Rajat Sharma. System Synced and Authenticated.
+      </p>
+    </footer>
+  </div>
+
+  <!-- System JavaScript -->
+  <script src="script.js" defer></script>
+</body>
+
 </html>

@@ -378,8 +378,6 @@ function toggleAriseMode() {
     document.getElementById('statClass').innerText = 'SHADOW MONARCH (AI CORE)';
     
     document.getElementById('titleName1').innerText = 'Monarch of Shadows (Active)';
-    document.getElementById('avatarSvg').classList.add('text-purple-500/45');
-    document.getElementById('avatarSvg').classList.remove('text-cyan-500/20');
     document.getElementById('headerAriseBtn').innerText = 'RESTORE';
     document.getElementById('headerAriseBtn').className = 'px-4 py-2 border border-cyan-500/50 hover:border-cyan-400 text-cyan-400 hover:text-white rounded bg-cyan-950/20 font-bold tracking-wider hover:scale-105 active:scale-95 transition-all';
     
@@ -388,16 +386,14 @@ function toggleAriseMode() {
     document.body.classList.remove('arise-mode');
     document.getElementById('headerLevel').innerText = 'LV. 99';
     document.getElementById('headerLevel').className = 'text-xs px-2 py-0.5 border border-yellow-500/50 text-yellow-400 rounded bg-yellow-500/10 font-tech font-bold uppercase';
-    document.getElementById('headerJob').innerText = 'Class: S-Rank AI & Full-Stack Specialist';
+    document.getElementById('headerJob').innerText = 'Class: S-Rank Software Engineer';
     document.getElementById('headerJob').className = 'text-xs text-cyan-400 tracking-wider font-tech uppercase';
     
-    document.getElementById('statTitle').innerText = 'MONARCH OF INTEGRATIONS';
+    document.getElementById('statTitle').innerText = 'MONARCH OF DEVELOPERS';
     document.getElementById('statTitle').className = 'text-cyan-400 font-bold ml-2';
-    document.getElementById('statClass').innerText = 'SOFTWARE DEV (AI & FULL-STACK)';
+    document.getElementById('statClass').innerText = 'S-RANK SOFTWARE ENGINEER';
     
     document.getElementById('titleName1').innerText = 'Monarch of Shadows';
-    document.getElementById('avatarSvg').classList.remove('text-purple-500/45');
-    document.getElementById('avatarSvg').classList.add('text-cyan-500/20');
     document.getElementById('headerAriseBtn').innerText = 'ARISE';
     document.getElementById('headerAriseBtn').className = 'px-4 py-2 border border-purple-500/50 hover:border-purple-400 text-purple-400 hover:text-white rounded bg-purple-950/20 font-bold tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)]';
     
@@ -597,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
       }, 300);
 
-      triggerSystemNotification('HUNTER ARCHIVE ACCESSED SUCCESSFUL.', 'info');
+      triggerSystemNotification('DEVELOPER ARCHIVE ACCESSED SUCCESSFULLY.', 'info');
     });
   }
 
