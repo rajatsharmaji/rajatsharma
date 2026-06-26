@@ -1,0 +1,159 @@
+:root {
+  --primary: #00f0ff;
+  --primary-rgb: 0, 240, 255;
+  --primary-glow: rgba(0, 240, 255, 0.4);
+  --secondary: #0ea5e9;
+  --bg-dark: #050814;
+  --panel-bg: rgba(8, 14, 28, 0.75);
+  --border-color: rgba(0, 240, 255, 0.15);
+}
+
+body.arise-mode {
+  --primary: #c084fc;
+  --primary-rgb: 192, 132, 252;
+  --primary-glow: rgba(192, 132, 252, 0.4);
+  --secondary: #a855f7;
+  --bg-dark: #030008;
+  --panel-bg: rgba(12, 4, 24, 0.85);
+  --border-color: rgba(168, 85, 247, 0.2);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: #cbd5e1;
+  transition: background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1), color 1.2s ease;
+  overflow-x: hidden;
+}
+
+.font-tech {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-mono-sys {
+  font-family: 'Orbitron', monospace;
+}
+
+/* Scanline visual overlay */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 40;
+}
+
+/* Glowing borders */
+.neon-panel {
+  border: 1px solid var(--border-color);
+  background-color: var(--panel-bg);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(var(--primary-rgb), 0.02);
+  transition: all 0.5s ease;
+}
+
+.neon-panel:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px var(--primary-glow), inset 0 0 15px rgba(var(--primary-rgb), 0.05);
+}
+
+.arise-mode .neon-panel {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(168, 85, 247, 0.03);
+}
+
+.text-glow {
+  text-shadow: 0 0 8px var(--primary-glow);
+  transition: text-shadow 0.5s ease;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020205;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+  transition: background 0.5s ease;
+}
+
+/* Animations */
+@keyframes shadow-flicker {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 2px var(--primary)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 12px var(--primary)); }
+}
+.aurora-glow {
+  animation: shadow-flicker 3s infinite ease-in-out;
+}
+
+@keyframes float-up-fade {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-50px) scale(1.3); opacity: 0; }
+}
+.float-point {
+  position: absolute;
+  color: var(--primary);
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  animation: float-up-fade 0.8s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* RPG Skills Grid Card */
+.rune-stone {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.5) 100%);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.rune-stone:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 10px var(--primary-glow);
+}
+
+/* Inventory slots */
+.inv-box {
+  aspect-ratio: 1;
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all 0.2s ease;
+}
+.inv-box.filled {
+  border: 1px solid var(--border-color);
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.6) 0%, rgba(10, 15, 30, 0.9) 100%);
+  cursor: pointer;
+}
+.inv-box.filled:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary-glow);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Arise custom background details */
+.arise-overlay {
+  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+}
+
+/* Tab active transitions */
+.sys-tab-btn {
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+.sys-tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  text-shadow: 0 0 8px var(--primary-glow);
+}
